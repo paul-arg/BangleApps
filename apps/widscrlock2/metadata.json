@@ -1,0 +1,14 @@
+{ "id": "widscrlock2",
+  "name": "Screenlock Widget Themed",
+  "shortName":"Screenlock",
+  "version":"0.01",
+  "description": "Lock a Bangle 2 screen by tapping a widget. Respects theme and shows the current lock state.",
+  "icon": "widget.png",  
+  "type": "widget",
+  "tags": "widget, screenlock",
+  "supports" : ["BANGLEJS2"],
+  "readme": "README.md",
+  "storage": [
+    {"name":"widscrlock2.wid.js","url":"widget.js"}
+  ]
+}
