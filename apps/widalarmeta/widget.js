@@ -10,11 +10,12 @@
       font: 1, // 0=segment style font, 1=teletext font, 2=6x8:1x2
     }, require("Storage").readJSON("widalarmeta.json",1) || {});
 
-      if (config.font == 0) {
+      /*if (config.font == 0) {
         require("Font5x9Numeric7Seg").add(Graphics);
       } else if (config.font == 1) {
         require("FontTeletext5x9Ascii").add(Graphics);
-      }
+      }*/
+      require("FontVGA8").add(Graphics);
   }
   loadSettings();
 
@@ -71,18 +72,19 @@
       } else {
         text += hours;
       }
-      text += ":" + minutes.padStart(2, '0');
+      text += "\n" + minutes.padStart(2, '0');
       if (drawSeconds) {
         text += ":" + seconds.padStart(2, '0');
       }
-      if (config.font == 0) {
+      /*if (config.font == 0) {
         g.setFont("5x9Numeric7Seg:1x2");
       } else if (config.font == 1) {
         g.setFont("Teletext5x9Ascii:1x2");
       } else {
         // Default to this if no other font is set.
         g.setFont("6x8:1x2");
-      }
+      }*/
+      g.setFont("VGA8");
       g.drawString(text, this.x+1, this.y+12);
 
       calcWidth = g.stringWidth(text) + 2; // One pixel on each side
